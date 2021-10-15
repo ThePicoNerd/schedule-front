@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "formik": "^2.2.9",
+    "luxon": "^2.0.2",
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "swr": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/luxon": "^2.0.5",
+    "@types/node": "^12.12.21",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "prettier": "^2.4.1",
+    "typescript": "4.0"
+  }
+}
