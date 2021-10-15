@@ -81,20 +81,16 @@ const ScheduleSelector: FunctionComponent = () => {
     const start = DateTime.fromISO(values.start);
     const end = DateTime.fromISO(values.end);
 
-    const cursors = [];
-
-    let current = start;
-    while (current < end) {
-      cursors.push(current);
-      current = current.plus({ weeks: 1 });
-    }
+    const lessons: Lesson[] = [];
 
     try {
-      const results = await Promise.all(
-        cursors.map((cursor) => fetchLessons(cursor, token))
-      );
+      let cursor = start;
 
-      const lessons = results.flat();
+      while (cursor < end) {
+        lessons.push(...(await fetchLessons(cursor, token)));
+
+        cursor = cursor.plus({ weeks: 1 });
+      }
 
       setLessons(lessons);
       setIcal(toIcal(lessons));
@@ -152,7 +148,10 @@ const ScheduleSelector: FunctionComponent = () => {
       {loading && (
         <div>
           <p>Det här kan ta en stund ...</p>
-          <img src="https://media3.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" />
+          <img
+            src="https://media3.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif"
+            width="200"
+          />
         </div>
       )}
       {lessons && (
