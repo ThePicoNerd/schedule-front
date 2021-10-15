@@ -165,6 +165,23 @@ const ScheduleSelector: FunctionComponent = () => {
           Tryck här för att spara kalendern
         </a>
       )}
+      {url && (
+        <>
+          <p>Så importerar du schemat till din kalender:</p>
+          <ul>
+            <li>
+              <a href="https://support.apple.com/sv-se/guide/calendar/icl1023/mac">
+                Apples kalender
+              </a>
+            </li>
+            <li>
+              <a href="https://support.google.com/calendar/answer/37118">
+                Google Kalender
+              </a>
+            </li>
+          </ul>
+        </>
+      )}
     </>
   );
 };
