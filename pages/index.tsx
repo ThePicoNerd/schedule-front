@@ -8,7 +8,7 @@ const IndexPage: NextPage = () => {
 
   return (
     <Context.Provider value={{ token, setToken }}>
-      <img src="/icon.png" />
+      <img src="/icon.png" height="200" />
       <Wizard />
       {token && <button onClick={() => setToken(undefined)}>Logga ut</button>}
     </Context.Provider>

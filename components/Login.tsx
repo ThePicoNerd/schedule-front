@@ -21,7 +21,7 @@ const Login: FunctionComponent = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8000/auth", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/auth`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -74,6 +74,7 @@ const Login: FunctionComponent = () => {
           </form>
         )}
       </Formik>
+      <p>Vi lagrar inte dina inloggningsuppgifter.</p>
     </>
   );
 };
