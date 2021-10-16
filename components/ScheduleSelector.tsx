@@ -45,9 +45,7 @@ function toIcal(lessons: Lesson[]): string {
 
       return {
         start: toDateArray(start),
-        startInputType: "utc",
         end: toDateArray(end),
-        endInputType: "utc",
         title: course,
         location: location,
         description: teacher,
